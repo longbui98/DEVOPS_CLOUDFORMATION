@@ -86,8 +86,10 @@ Resources:
           #!/bin/bash
           sudo apt-get update -y
           sudo apt-get install apache2 -y
-          sudo systemctl start apache2.service          
-      ImageId: "ami-05548f9cecf47b442"
+          sudo systemctl start apache2.service  
+          cd /var/www/html
+          echo "it works! Udagram, Udacity" > index.html        
+      ImageId: ami-053b0d53c279acc90
       KeyName: cloudmation-keypair
       IamInstanceProfile: 
         Ref:  ProfileWithRolesForOurApp
